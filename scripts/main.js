@@ -22,7 +22,15 @@ function login() {
     },
   })
     .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
+    .then((res) => {
+      console.log(res);
+      if (!res.data) {
+        document.querySelector("#error").innerHTML =
+          "No user found with those credentials";
+        return;
+      } else {
+        localStorage.setItem("user", JSON.stringify(res.data));
+        window.location = "./landing.html";
+      }
     });
 }
