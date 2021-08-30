@@ -1,4 +1,4 @@
-fetch("http://127.0.0.1:5000/")
+fetch("https://ecommerce-final-eomp.herokuapp.com/")
   .then((res) => res.json())
   .then((data) => {
     console.log(data);
@@ -11,7 +11,7 @@ function login() {
   console.log(email, password);
 
   //   SEND DATA TO API
-  fetch("http://127.0.0.1:5000/users/", {
+  fetch("https://ecommerce-final-eomp.herokuapp.com/users/", {
     method: "PATCH",
     body: JSON.stringify({
       email,

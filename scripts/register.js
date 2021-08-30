@@ -6,7 +6,7 @@ function register() {
   console.log(full_name, email, password);
 
   //   SEND DATA TO API
-  fetch("http://127.0.0.1:5000/users/", {
+  fetch("https://ecommerce-final-eomp.herokuapp.com/users/", {
     method: "POST",
     body: JSON.stringify({
       full_name,
