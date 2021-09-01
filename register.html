@@ -10,15 +10,30 @@
     <title>Register</title>
   </head>
   <body>
-    <form onsubmit="event.preventDefault(); register()">
-      <h1>Register</h1>
-      <input type="text" id="full_name" placeholder="Full Name" required />
-      <input type="email" id="email" placeholder="Email" required />
-      <input type="password" id="password" placeholder="Password" required />
-      <span id="error"></span>
-      <button type="submit">Submit</button>
-      <p>Already have an account? <a href="./index.html">Sign In</a></p>
-    </form>
+    <!-- REGISTER CONTAINER -->
+    <div class="container">
+      <!-- REGISTER BACKGROUND -->
+      <div class="background">
+        <!-- FORM CONTAINER -->
+        <form
+          class="register-form"
+          onsubmit="event.preventDefault(); register()"
+        >
+          <h1>Register</h1>
+          <input type="text" id="full_name" placeholder="Full Name" required />
+          <input type="email" id="email" placeholder="Email" required />
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <span id="error"></span>
+          <button type="submit">Submit</button>
+          <p>Already have an account? <a href="./index.html">Sign In</a></p>
+        </form>
+      </div>
+    </div>
     <!-- SCRIPTS -->
     <script src="./scripts/register.js"></script>
   </body>
