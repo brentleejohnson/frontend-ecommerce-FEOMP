@@ -23,6 +23,8 @@ body {
   background: rgba(0, 0, 0, 0.7);
   width: 35%;
   height: 70%;
+  box-shadow: 0 0 5px #000;
+  border-radius: 5px;
 }
 
 .register-form {
