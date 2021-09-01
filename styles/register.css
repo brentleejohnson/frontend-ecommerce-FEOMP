@@ -42,12 +42,14 @@ body {
   background: transparent;
   color: white;
   border: none;
-  box-shadow: 0 0 3px white;
+  border-bottom: 1px solid white;
+  font-size: larger;
 }
 
 .register-form input:focus {
   outline: none;
   border: none;
+  border-bottom: 1px solid white;
 }
 
 .register-form button {
@@ -55,8 +57,7 @@ body {
   height: 10%;
   background: transparent;
   color: white;
-  border: none;
-  box-shadow: 0 0 3px white;
+  border: 1px solid white;
   font-size: larger;
   transition: 0.3s ease-in;
 }
