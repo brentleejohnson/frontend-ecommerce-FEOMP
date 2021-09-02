@@ -8,7 +8,13 @@ function getProducts() {
       console.log(res);
 
       const products = res.data;
-      showProducts(products);
+
+      if (products.length == 0) {
+        document.querySelector("#products").innerHTML =
+          "You have no products yet, please create one.";
+      } else {
+        showProducts(products);
+      }
     });
 }
 
@@ -28,4 +34,17 @@ function showProducts(products) {
         </div>
         `;
   });
+}
+
+function logout() {
+  localStorage.clear();
+  window.location = "./index.html";
+}
+
+function toggleCreateProductModal() {
+  document.querySelector("#create-product-modal").classList.toggle("active");
+}
+
+function createProduct() {
+  console.log("Create product please");
 }

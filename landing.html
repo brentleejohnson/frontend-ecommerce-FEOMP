@@ -10,8 +10,25 @@
     <title>E-Commerce Store</title>
   </head>
   <body>
+    <div class="options-bar">
+      <button onclick="toggleCreateProductModal()">Create Product</button>
+      <button onclick="logout()">Logout</button>
+    </div>
     <h1 id="greeting"></h1>
     <div id="products"></div>
+    <div id="create-product-modal">
+      <form onsubmit="event.preventDefault(); createProduct()">
+        <input type="text" placeholder="Image" id="image" required />
+        <input type="text" placeholder="Name" id="name" required />
+        <textarea
+          name="description"
+          id="description"
+          placeholder="Description"
+        ></textarea>
+        <input type="text" placeholder="Price" id="price" required />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
     <!-- SCRIPTS -->
     <script src="./scripts/landing.js"></script>
   </body>
