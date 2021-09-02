@@ -1,21 +1,67 @@
-fetch("https://ecommerce-final-eomp.herokuapp.com/")
-  .then((res) => res.json())
-  .then((data) => {
-    console.log(data);
+const user = JSON.parse(localStorage.getItem("user"));
+document.querySelector("#greeting").innerHTML = `Hello there ${user.full_name}`;
+const products = JSON.parse(localStorage.getItem("products"));
+
+function getProducts() {
+  fetch(`https://ecommerce-final-eomp.herokuapp.com/product/${user.user_id}`)
+    .then((res) => res.json())
+    .then((res) => {
+      console.log(res);
+
+      const user_products = res.data;
+
+      if (products.length == 0) {
+        document.querySelector("#products").innerHTML =
+          "You have no products yet, please create one.";
+      } else {
+        // products =
+        showProducts(user_products);
+      }
+    });
+}
+
+getProducts();
+
+function showProducts(products) {
+  let container = document.querySelector("#products");
+  container.innerHTML = ``;
+
+  products.forEach((product) => {
+    container.innerHTML += `
+        <div class="product-card">
+            <img class="product-image" src="${product.image}" alt="" />
+            <h3 class="product-title">${product.name}</h3>
+            <p class="product-description">${product.description}</p>
+            <p class="product-price">R${product.price}</p>
+            <button onclick="addToCart(${product.product_id})">Add to the cart</button>
+        </div>
+        `;
   });
+}
 
-function login() {
-  // GETTING DATA FROM FORM
-  let email = document.querySelector("#email").value;
-  let password = document.querySelector("#password").value;
-  console.log(email, password);
+function logout() {
+  localStorage.clear();
+  window.location = "./index.html";
+}
 
-  //   SEND DATA TO API
-  fetch("https://ecommerce-final-eomp.herokuapp.com/users/", {
-    method: "PATCH",
+function toggleCreateProductModal() {
+  document.querySelector("#create-product-modal").classList.toggle("active");
+}
+
+function createProduct() {
+  const image = document.querySelector("#image").value;
+  const name = document.querySelector("#name").value;
+  const description = document.querySelector("#description").value;
+  const price = document.querySelector("#price").value;
+
+  fetch("https://ecommerce-final-eomp.herokuapp.com/product/", {
+    method: "POST",
     body: JSON.stringify({
-      email,
-      password,
+      user_id: user.user_id,
+      image,
+      name,
+      description,
+      price,
     }),
     headers: {
       "Content-type": "application/json; charset=UTF-8",
@@ -24,13 +70,14 @@ function login() {
     .then((res) => res.json())
     .then((res) => {
       console.log(res);
-      if (!res.data) {
-        document.querySelector("#error").innerHTML =
-          "No user found with those credentials";
-        return;
-      } else {
-        localStorage.setItem("user", JSON.stringify(res.data));
-        window.location = "./landing.html";
+
+      if (res.status_code == 201) {
+        window.location.reload();
       }
     });
 }
+
+// Code input for products page
+// JSON.parse(localStorage.getItem("user"))
+// `<button onclick="addToCart(${id})"></button>`
+// `<a href="login.html">Login</a>`

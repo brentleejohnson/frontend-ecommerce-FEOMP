@@ -4,38 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- FONT AWESOME -->
-    <script
-      src="https://kit.fontawesome.com/2822e841b6.js"
-      crossorigin="anonymous"
-    ></script>
     <!-- PERSONAL STYLESHEETS -->
     <link rel="stylesheet" href="./styles/styles.css" />
     <!-- TITLE -->
-    <title>Login</title>
+    <title>E-Commerce Store</title>
   </head>
   <body>
-    <!-- LOGIN CONTAINER -->
-    <div class="container">
-      <!-- LOGIN BACKGROUND -->
-      <div class="background">
-        <!-- LOGIN FORM -->
-        <form class="login-form" onsubmit="event.preventDefault(); login()">
-          <h1>Login</h1>
-          <input type="email" id="email" placeholder="Email" required />
-          <input
-            type="password"
-            id="password"
-            placeholder="Password"
-            required
-          />
-          <span id="error"></span>
-          <button type="submit">Submit</button>
-          <p>
-            Don't have an account? <a href="./register.html">Register here</a>
-          </p>
-        </form>
-      </div>
+    <div class="options-bar">
+      <button onclick="toggleCreateProductModal()">Create Product</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+    <h1 id="greeting"></h1>
+    <div id="products"></div>
+    <div id="create-product-modal">
+      <form onsubmit="event.preventDefault(); createProduct()">
+        <input type="text" placeholder="Image" id="image" required />
+        <input type="text" placeholder="Name" id="name" required />
+        <textarea
+          name="description"
+          id="description"
+          placeholder="Description"
+        ></textarea>
+        <input type="text" placeholder="Price" id="price" required />
+        <button type="submit">Submit</button>
+      </form>
     </div>
     <!-- SCRIPTS -->
     <script src="./scripts/main.js"></script>

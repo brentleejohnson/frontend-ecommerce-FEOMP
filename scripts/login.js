@@ -1,15 +1,19 @@
-function register() {
+fetch("https://ecommerce-final-eomp.herokuapp.com/")
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data);
+  });
+
+function login() {
   // GETTING DATA FROM FORM
-  let full_name = document.querySelector("#full_name").value;
   let email = document.querySelector("#email").value;
   let password = document.querySelector("#password").value;
-  console.log(full_name, email, password);
+  console.log(email, password);
 
   //   SEND DATA TO API
   fetch("https://ecommerce-final-eomp.herokuapp.com/users/", {
-    method: "POST",
+    method: "PATCH",
     body: JSON.stringify({
-      full_name,
       email,
       password,
     }),
@@ -19,13 +23,14 @@ function register() {
   })
     .then((res) => res.json())
     .then((res) => {
-      console.log(res.status_code == 201);
-      {
+      console.log(res);
+      if (!res.data) {
         document.querySelector("#error").innerHTML =
-          "You have successfully registered, please sign in to continue";
-        setTimeout(function () {
-          window.location = "./login.html";
-        }, 3000);
+          "No user found with those credentials";
+        return;
+      } else {
+        localStorage.setItem("user", JSON.stringify(res.data));
+        window.location = "./index.html";
       }
     });
 }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- FONT AWESOME -->
+    <script
+      src="https://kit.fontawesome.com/2822e841b6.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- PERSONAL STYLESHEETS -->
+    <link rel="stylesheet" href="./styles/login.css" />
+    <!-- TITLE -->
+    <title>Login</title>
+  </head>
+  <body>
+    <!-- LOGIN CONTAINER -->
+    <div class="container">
+      <!-- LOGIN BACKGROUND -->
+      <div class="background">
+        <!-- LOGIN FORM -->
+        <form class="login-form" onsubmit="event.preventDefault(); login()">
+          <h1>Login</h1>
+          <input type="email" id="email" placeholder="Email" required />
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <span id="error"></span>
+          <button type="submit">Submit</button>
+          <p>
+            Don't have an account? <a href="./register.html">Register here</a>
+          </p>
+        </form>
+      </div>
+    </div>
+    <!-- SCRIPTS -->
+    <script src="./scripts/login.js"></script>
+  </body>
+</html>
