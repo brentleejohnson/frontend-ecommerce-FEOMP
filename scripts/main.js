@@ -10,7 +10,7 @@ function getProducts() {
 
       const user_products = res.data;
 
-      if (products.length == 0) {
+      if (user_products.length == 0) {
         document.querySelector("#products").innerHTML =
           "You have no products yet, please create one.";
       } else {
