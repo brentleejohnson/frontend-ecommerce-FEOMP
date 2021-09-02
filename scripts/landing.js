@@ -8,13 +8,14 @@ function getProducts() {
     .then((res) => {
       console.log(res);
 
-      const products = res.data;
+      const user_products = res.data;
 
       if (products.length == 0) {
         document.querySelector("#products").innerHTML =
           "You have no products yet, please create one.";
       } else {
-        showProducts(products);
+        // products =
+        showProducts(user_products);
       }
     });
 }
