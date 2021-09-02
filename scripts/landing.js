@@ -46,5 +46,31 @@ function toggleCreateProductModal() {
 }
 
 function createProduct() {
-  console.log("Create product please");
+  const image = document.querySelector("#image").value;
+  const name = document.querySelector("#name").value;
+  const description = document.querySelector("#description").value;
+  const price = document.querySelector("#price").value;
+
+  fetch("https://ecommerce-final-eomp.herokuapp.com/product/", {
+    method: "POST",
+    body: JSON.stringify({
+      user_id: user.user_id,
+      image,
+      name,
+      description,
+      price,
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      console.log(res);
+    });
 }
+
+// Code input for products page
+// JSON.parse(localStorage.getItem("user"))
+// `<button onclick="addToCart(${id})"></button>`
+// `<a href="login.html">Login</a>`
