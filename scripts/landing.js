@@ -1,5 +1,6 @@
 const user = JSON.parse(localStorage.getItem("user"));
 document.querySelector("#greeting").innerHTML = `Hello there ${user.full_name}`;
+const products = JSON.parse(localStorage.getItem("products"));
 
 function getProducts() {
   fetch(`https://ecommerce-final-eomp.herokuapp.com/product/${user.user_id}`)
@@ -31,6 +32,7 @@ function showProducts(products) {
             <h3 class="product-title">${product.name}</h3>
             <p class="product-description">${product.description}</p>
             <p class="product-price">R${product.price}</p>
+            <button onclick="addToCart(${product.product_id})">Add to the cart</button>
         </div>
         `;
   });
@@ -67,6 +69,10 @@ function createProduct() {
     .then((res) => res.json())
     .then((res) => {
       console.log(res);
+
+      if (res.status_code == 201) {
+        window.location.reload();
+      }
     });
 }
 
