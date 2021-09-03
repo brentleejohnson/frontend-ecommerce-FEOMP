@@ -35,12 +35,6 @@ function showProducts(products) {
   });
 }
 
-// LOGS THE USER OUT
-function logout() {
-  localStorage.clear();
-  window.location = "./login.html";
-}
-
 // TOGGLES MODAL FOR CREATING A PRODUCT
 function toggleCreateProductModal() {
   document.querySelector("#create-product-modal").classList.toggle("active");
