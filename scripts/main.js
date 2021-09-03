@@ -5,20 +5,14 @@ const products = JSON.parse(localStorage.getItem("products"));
 
 // FETCHES ALL THE PRODUCTS
 function getProducts() {
-  fetch(`https://ecommerce-final-eomp.herokuapp.com/product/${user.user_id}`)
+  fetch(`https://ecommerce-final-eomp.herokuapp.com/product/`)
     .then((res) => res.json())
     .then((res) => {
       console.log(res);
 
       const user_products = res.data;
 
-      if (user_products.length == 0) {
-        document.querySelector("#products").innerHTML =
-          "You have no products yet, please create one.";
-      } else {
-        // products =
-        showProducts(user_products);
-      }
+      showProducts(user_products);
     });
 }
 getProducts();
@@ -44,7 +38,7 @@ function showProducts(products) {
 // LOGS THE USER OUT
 function logout() {
   localStorage.clear();
-  window.location = "./index.html";
+  window.location = "./login.html";
 }
 
 // TOGGLES MODAL FOR CREATING A PRODUCT
@@ -86,5 +80,3 @@ function createProduct() {
 // JSON.parse(localStorage.getItem("user"))
 // `<button onclick="addToCart(${id})"></button>`
 // `<a href="login.html">Login</a>`
-
-// HARD CODE ADDED PRODUCTS
