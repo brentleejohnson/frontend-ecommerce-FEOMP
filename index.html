@@ -40,7 +40,8 @@
     <div id="products"></div>
     <div id="create-product-modal">
       <form onsubmit="event.preventDefault(); createProduct()">
-        <input type="text" placeholder="Image" id="image" required />
+        <input type="file" placeholder="Image" id="image" required />
+        <img class="addImage" src="" alt="" />
         <input type="text" placeholder="Name" id="name" required />
         <textarea
           name="description"

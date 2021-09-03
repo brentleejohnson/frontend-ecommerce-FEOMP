@@ -44,7 +44,7 @@ function toggleCreateProductModal() {
 
 // CREATES A PRODUCT
 function createProduct() {
-  const image = document.querySelector("#image").value;
+  const image = document.querySelector(".addImage").src;
   const name = document.querySelector("#name").value;
   const description = document.querySelector("#description").value;
   const price = document.querySelector("#price").value;
@@ -71,6 +71,27 @@ function createProduct() {
       }
     });
 }
+
+function previewFile() {
+  const image = document.querySelector(".addImage");
+  const file = document.querySelector("#image").files[0];
+  const reader = new FileReader();
+
+  reader.addEventListener(
+    "load",
+    function () {
+      // convert image file to base64 string
+      image.src = reader.result;
+    },
+    false
+  );
+
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+}
+
+document.querySelector("#image").addEventListener("change", previewFile);
 
 // Code input for products page
 // JSON.parse(localStorage.getItem("user"))
