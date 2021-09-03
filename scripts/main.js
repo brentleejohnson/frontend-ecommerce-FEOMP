@@ -12,6 +12,8 @@ function getProducts() {
 
       const user_products = res.data;
 
+      // products = user_products;
+      // localStorage.setItem("products", JSON.stringify(user_products));
       showProducts(user_products);
     });
 }
@@ -74,3 +76,8 @@ function createProduct() {
 // JSON.parse(localStorage.getItem("user"))
 // `<button onclick="addToCart(${id})"></button>`
 // `<a href="login.html">Login</a>`
+
+// function addToCart(productID) {
+//   let item = products.filter((product) => product.product_id == productID);
+//   console.log(item);
+// }
