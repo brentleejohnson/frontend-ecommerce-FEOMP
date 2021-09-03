@@ -1,7 +1,9 @@
+// SHOWS USER INFORMATION
 const user = JSON.parse(localStorage.getItem("user"));
 document.querySelector("#greeting").innerHTML = `Hello there ${user.full_name}`;
 const products = JSON.parse(localStorage.getItem("products"));
 
+// FETCHES ALL THE PRODUCTS
 function getProducts() {
   fetch(`https://ecommerce-final-eomp.herokuapp.com/product/${user.user_id}`)
     .then((res) => res.json())
@@ -19,9 +21,9 @@ function getProducts() {
       }
     });
 }
-
 getProducts();
 
+// DISPLAYS THE PRODUCTS
 function showProducts(products) {
   let container = document.querySelector("#products");
   container.innerHTML = ``;
@@ -39,15 +41,18 @@ function showProducts(products) {
   });
 }
 
+// LOGS THE USER OUT
 function logout() {
   localStorage.clear();
   window.location = "./index.html";
 }
 
+// TOGGLES MODAL FOR CREATING A PRODUCT
 function toggleCreateProductModal() {
   document.querySelector("#create-product-modal").classList.toggle("active");
 }
 
+// CREATES A PRODUCT
 function createProduct() {
   const image = document.querySelector("#image").value;
   const name = document.querySelector("#name").value;
@@ -81,3 +86,5 @@ function createProduct() {
 // JSON.parse(localStorage.getItem("user"))
 // `<button onclick="addToCart(${id})"></button>`
 // `<a href="login.html">Login</a>`
+
+// HARD CODE ADDED PRODUCTS
