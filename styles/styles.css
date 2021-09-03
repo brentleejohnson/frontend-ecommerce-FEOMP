@@ -11,18 +11,6 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-#create-product-modal {
-  display: none;
-}
-
-#create-product-modal.active {
-  display: block;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  background: rgba(255, 255, 255, 0.5);
-}
-
 .navbar {
   width: 100%;
   display: flex;
@@ -74,4 +62,16 @@ body {
   height: 80%;
   background-attachment: fixed;
   background-size: cover;
+}
+
+#create-product-modal {
+  display: none;
+}
+
+#create-product-modal.active {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.5);
 }
