@@ -102,3 +102,23 @@ document.querySelector("#image").addEventListener("change", previewFile);
 //   let item = products.filter((product) => product.product_id == productID);
 //   console.log(item);
 // }
+
+function addToCart(image, name, price, quantity) {
+  let item = {
+    image: image,
+    name: name,
+    price: price,
+    quantity: parseInt(quantity),
+  };
+  for (let x in cart) {
+    if (item.name == cart[x].name) {
+      cart[x].quantity += item.quantity;
+      window.localStorage["cart"] = JSON.stringify(cart);
+      console.log(JSON.parse(window.localStorage["cart"]));
+      return;
+    }
+  }
+  cart.push(item);
+  window.localStorage["cart"] = JSON.stringify(cart);
+  console.log(JSON.parse(window.localStorage["cart"]));
+}
