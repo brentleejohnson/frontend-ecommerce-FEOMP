@@ -7,9 +7,9 @@ function logout() {
 // SHOWS USER INFORMATION
 const user = JSON.parse(localStorage.getItem("user"));
 document.querySelector("#greeting").innerHTML = `Hello there ${user.full_name}`;
-const products = JSON.parse(localStorage.getItem("products"));
 
 // FETCHES ALL THE PRODUCTS
+const products = JSON.parse(localStorage.getItem("products"));
 function getProducts() {
   fetch(`https://ecommerce-final-eomp.herokuapp.com/product/`)
     .then((res) => res.json())
@@ -105,10 +105,15 @@ document.querySelector("#image").addEventListener("change", previewFile);
 // `<button onclick="addToCart(${id})"></button>`
 // `<a href="login.html">Login</a>`
 
-function addToCart(productID) {
-  let item = products.filter((product) => product.product_id == productID);
+function addToCart() {
+  let item = document.querySelector(".product-card").children;
   console.log(item);
 }
+
+// function addToCart(productID) {
+//   let item = products.filter((product) => product.product_id == productID);
+//   console.log(item);
+// }
 
 // let cart = []
 
