@@ -88,7 +88,7 @@ function previewFile() {
   reader.addEventListener(
     "load",
     function () {
-      // convert image file to base64 string
+      // CONVERT IMAGE FILE TO BASE24 STRING
       image.src = reader.result;
     },
     false
