@@ -98,7 +98,6 @@ function previewFile() {
     reader.readAsDataURL(file);
   }
 }
-
 document.querySelector("#image").addEventListener("change", previewFile);
 
 // Code input for products page
@@ -106,27 +105,29 @@ document.querySelector("#image").addEventListener("change", previewFile);
 // `<button onclick="addToCart(${id})"></button>`
 // `<a href="login.html">Login</a>`
 
-// function addToCart(productID) {
-//   let item = products.filter((product) => product.product_id == productID);
-//   console.log(item);
-// }
-
-function addToCart(image, name, price, quantity) {
-  let item = {
-    image: image,
-    name: name,
-    price: price,
-    quantity: parseInt(quantity),
-  };
-  for (let x in cart) {
-    if (item.name == cart[x].name) {
-      cart[x].quantity += item.quantity;
-      window.localStorage["cart"] = JSON.stringify(cart);
-      console.log(JSON.parse(window.localStorage["cart"]));
-      return;
-    }
-  }
-  cart.push(item);
-  window.localStorage["cart"] = JSON.stringify(cart);
-  console.log(JSON.parse(window.localStorage["cart"]));
+function addToCart(productID) {
+  let item = products.filter((product) => product.product_id == productID);
+  console.log(item);
 }
+
+// let cart = []
+
+// function addToCart(image, name, price, quantity) {
+//   let item = {
+//     image: image,
+//     name: name,
+//     price: price,
+//     quantity: parseInt(quantity),
+//   };
+//   for (let x in cart) {
+//     if (item.name == cart[x].name) {
+//       cart[x].quantity += item.quantity;
+//       window.localStorage["cart"] = JSON.stringify(cart);
+//       console.log(JSON.parse(window.localStorage["cart"]));
+//       return;
+//     }
+//   }
+//   cart.push(item);
+//   window.localStorage["cart"] = JSON.stringify(cart);
+//   console.log(JSON.parse(window.localStorage["cart"]));
+// }

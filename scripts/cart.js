@@ -4,6 +4,7 @@ function logout() {
   window.location = "./login.html";
 }
 
+cart = JSON.parse(window.localStorage["cart"]);
 function showCart(cart) {
   console.log(cart);
   var total = 0;
@@ -19,3 +20,4 @@ function showCart(cart) {
       `;
   });
 }
+showCart(cart);
