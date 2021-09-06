@@ -1,3 +1,9 @@
+// LOGS THE USER OUT
+function logout() {
+  localStorage.clear();
+  window.location = "./login.html";
+}
+
 // SHOWS USER INFORMATION
 const user = JSON.parse(localStorage.getItem("user"));
 document.querySelector("#greeting").innerHTML = `Hello there ${user.full_name}`;
