@@ -78,6 +78,8 @@ function createProduct() {
     });
 }
 
+// CODE FOR CLOUDINARY
+// ALLOWS ADMIN TO ADD IMAGE FROM THEIR DEVICE INSTEAD OF IMAGE ADDRESS
 function previewFile() {
   const image = document.querySelector(".addImage");
   const file = document.querySelector("#image").files[0];
