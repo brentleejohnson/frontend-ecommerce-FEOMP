@@ -64,6 +64,26 @@ body {
   background-size: cover;
 }
 
+#about-products {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#about-products h1 {
+  margin-bottom: 2%;
+}
+
+#about-products p {
+  text-align: center;
+  width: 70%;
+  font-size: larger;
+  font-weight: lighter;
+}
+
 #create-product-modal {
   display: none;
 }
@@ -76,6 +96,7 @@ body {
   background: rgba(255, 255, 255, 0.5);
 }
 
+/* SO THAT THE IMAGE WON'T APPEAR WHEN SELECTED FOR ADDING A PRODUCT */
 .addImage {
   display: none;
 }
