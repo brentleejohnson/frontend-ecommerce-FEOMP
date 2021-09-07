@@ -136,6 +136,10 @@ body {
   text-align: center;
 }
 
+#products {
+  margin-bottom: 10%;
+}
+
 #create-product-modal {
   display: none;
 }
