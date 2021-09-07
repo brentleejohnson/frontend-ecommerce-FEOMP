@@ -75,6 +75,7 @@ body {
 
 .about-us h1 {
   margin-bottom: 2%;
+  color: #212529;
 }
 
 .about-us p {
@@ -98,12 +99,18 @@ body {
 
 .about-products-description h2 {
   font-size: 28px;
+  width: 80%;
+  text-align: center;
+  margin-bottom: 3%;
+  color: #212529;
 }
 
 .about-products-description p {
   font-size: larger;
   font-weight: lighter;
   text-shadow: 0 0 1px black;
+  width: 80%;
+  text-align: center;
 }
 
 .best-seller {
@@ -131,7 +138,7 @@ body {
   position: fixed;
   top: 50%;
   left: 50%;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 /* SO THAT THE IMAGE WON'T APPEAR WHEN SELECTED FOR ADDING A PRODUCT */
