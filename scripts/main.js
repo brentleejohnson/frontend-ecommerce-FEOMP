@@ -28,7 +28,7 @@ getProducts();
 // DISPLAYS THE PRODUCTS
 function showProducts(products) {
   let container = document.querySelector("#products");
-  container.innerHTML = ``;
+  container.innerHTML = "";
 
   products.forEach((product) => {
     container.innerHTML += `
@@ -37,9 +37,20 @@ function showProducts(products) {
             <h3 class="product-title">${product.name}</h3>
             <p class="product-description">${product.description}</p>
             <p class="product-price">R${product.price}</p>
-            <button onclick="addToCart(${product.product_id})">Add to the cart</button>
+            <button class="addToCart">Add to the cart</button>
         </div>
         `;
+    document.querySelectorAll(".addToCart").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        addToCart(
+          e.currentTarget.parentElement.querySelector(".product-title")
+            .innerHTML,
+          e.currentTarget.parentElement.querySelector(".product-price")
+            .innerHTML,
+          e.currentTarget.parentElement.querySelector(".product-image").src
+        );
+      });
+    });
   });
 }
 
@@ -105,34 +116,30 @@ document.querySelector("#image").addEventListener("change", previewFile);
 // `<button onclick="addToCart(${id})"></button>`
 // `<a href="login.html">Login</a>`
 
-function addToCart() {
-  let item = document.querySelector(".product-card").children;
-  console.log(item);
+// function addToCart(product_id) {
+//   fetch("https://ecommerce-final-eomp.herokuapp.com/product/")
+//     .then((res) => res.json())
+//     .then((res) => {
+//       console.log(res.data[0].product_id);
+//       // let item = products.filter((product) => product.product_id == productID);
+//       // console.log(item);
+//     });
+// }
+
+var cart = [];
+
+if (window.localStorage["cart"]) {
+  cart = JSON.parse(window.localStorage["cart"]);
 }
 
-// function addToCart(productID) {
-//   let item = products.filter((product) => product.product_id == productID);
-//   console.log(item);
-// }
-
-// let cart = []
-
-// function addToCart(image, name, price, quantity) {
-//   let item = {
-//     image: image,
-//     name: name,
-//     price: price,
-//     quantity: parseInt(quantity),
-//   };
-//   for (let x in cart) {
-//     if (item.name == cart[x].name) {
-//       cart[x].quantity += item.quantity;
-//       window.localStorage["cart"] = JSON.stringify(cart);
-//       console.log(JSON.parse(window.localStorage["cart"]));
-//       return;
-//     }
-//   }
-//   cart.push(item);
-//   window.localStorage["cart"] = JSON.stringify(cart);
-//   console.log(JSON.parse(window.localStorage["cart"]));
-// }
+function addToCart(name, price, image) {
+  let item = { image: image, name: name, price: price };
+  for (let x in cart) {
+    if (item.name == cart[x].name) {
+      return;
+    }
+  }
+  cart.push(item);
+  window.localStorage["cart"] = JSON.stringify(cart);
+  console.log(JSON.parse(window.localStorage["cart"]));
+}
