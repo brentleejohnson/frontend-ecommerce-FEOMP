@@ -14,8 +14,7 @@ function showCart(cart) {
       <div class="item">
         <img class="cart-image" src="${item.image}" alt="" />
         <h3 class="cart-name">${item.name}</h3>
-        <p class="cart-description">${item.description}</p>
-        <p class="cart-price">R${item.price}</p>
+        <p class="cart-price">${item.price}</p>
       </div>
       `;
   });
