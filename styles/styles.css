@@ -180,6 +180,7 @@ body {
   border-radius: 3px;
   box-shadow: 0 0 3px black;
   transition: 0.2s ease-in;
+  font-size: larger;
 }
 
 /* .contact-form:hover {
@@ -198,6 +199,7 @@ body {
 .contact-form input:focus {
   outline: none;
   border: none;
+  border-bottom: 1px solid white;
 }
 
 #message {
