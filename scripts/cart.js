@@ -15,6 +15,7 @@ function showCart(cart) {
         <img class="cart-image" src="${item.image}" alt="" />
         <h3 class="cart-name">${item.name}</h3>
         <p class="cart-price">${item.price}</p>
+        <button class="cart-button">Delete</button>
       </div>
       `;
   });
