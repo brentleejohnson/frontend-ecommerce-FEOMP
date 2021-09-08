@@ -143,3 +143,12 @@ function addToCart(name, price, image) {
   window.localStorage["cart"] = JSON.stringify(cart);
   console.log(JSON.parse(window.localStorage["cart"]));
 }
+
+// HOVER FOR CONTACT PAGE
+document.querySelector("#contact").addEventListener("mouseover", contact());
+
+function contact() {
+  console.log("Hello");
+  let contact = document.querySelector("#contact");
+  contact.classList.toggle("blur");
+}

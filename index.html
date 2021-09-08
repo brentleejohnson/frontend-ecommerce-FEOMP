@@ -93,7 +93,8 @@
       </form>
     </div>
     <!-- CONTACT PAGE -->
-    <div id="contact">
+    <div class="contact-filter"></div>
+    <div id="contact" onmouseover="contact()">
       <form
         class="contact-form"
         action="https://formspree.io/f/mvodddaa"
@@ -120,7 +121,12 @@
           placeholder="072 123 4567"
           requried
         />
-        <textarea name="description" id="message"></textarea>
+        <input
+          type="text"
+          name="description"
+          id="message"
+          placeholder="Write your message here"
+        />
         <button type="submit" id="contact-button">Submit</button>
       </form>
     </div>
