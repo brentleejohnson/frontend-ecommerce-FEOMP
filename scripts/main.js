@@ -148,7 +148,6 @@ function addToCart(name, price, image) {
 document.querySelector("#contact").addEventListener("mouseover", contact());
 
 function contact() {
-  console.log("Hello");
   let contact = document.querySelector("#contact");
   contact.classList.toggle("blur");
 }
