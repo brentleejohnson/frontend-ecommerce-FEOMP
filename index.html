@@ -94,7 +94,35 @@
     </div>
     <!-- CONTACT PAGE -->
     <div id="contact">
-      <form action="https://formspree.io/f/mvodddaa" method="POST"></form>
+      <form
+        class="contact-form"
+        action="https://formspree.io/f/mvodddaa"
+        method="POST"
+      >
+        <input
+          type="text"
+          name="name"
+          id="contact-name"
+          placeholder="Full Name"
+          requried
+        />
+        <input
+          type="email"
+          name="email"
+          id="contact-email"
+          placeholder="email@domain.com"
+          requried
+        />
+        <input
+          type="tel"
+          name="number"
+          id="contact-number"
+          placeholder="072 123 4567"
+          requried
+        />
+        <textarea name="description" id="message"></textarea>
+        <button type="submit" id="contact-button">Submit</button>
+      </form>
     </div>
     <!-- SCRIPTS -->
     <script src="./scripts/main.js"></script>
