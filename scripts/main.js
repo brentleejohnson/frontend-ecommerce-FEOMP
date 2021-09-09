@@ -15,7 +15,7 @@ if (user != null) {
 // FETCHES ALL THE PRODUCTS
 const products = JSON.parse(localStorage.getItem("products"));
 function getProducts() {
-  fetch(`https://ecommerce-final-eomp.herokuapp.com/product/${user.user_id}`)
+  fetch(`https://ecommerce-final-eomp.herokuapp.com/product/`)
     .then((res) => res.json())
     .then((res) => {
       console.log(res);
