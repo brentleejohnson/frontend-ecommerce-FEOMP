@@ -69,7 +69,6 @@ function createProduct() {
   fetch("https://ecommerce-final-eomp.herokuapp.com/product/", {
     method: "POST",
     body: JSON.stringify({
-      user_id: user.user_id,
       image,
       name,
       description,
