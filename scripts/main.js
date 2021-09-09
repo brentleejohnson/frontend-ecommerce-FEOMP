@@ -6,12 +6,16 @@ function logout() {
 
 // SHOWS USER INFORMATION
 const user = JSON.parse(localStorage.getItem("user"));
-document.querySelector("#greeting").innerHTML = `Hello there ${user.full_name}`;
+if (user != null) {
+  document.querySelector(
+    "#greeting"
+  ).innerHTML = `Hello there ${user.full_name}`;
+}
 
 // FETCHES ALL THE PRODUCTS
 const products = JSON.parse(localStorage.getItem("products"));
 function getProducts() {
-  fetch(`https://ecommerce-final-eomp.herokuapp.com/product/`)
+  fetch(`https://ecommerce-final-eomp.herokuapp.com/product/${user.user_id}`)
     .then((res) => res.json())
     .then((res) => {
       console.log(res);
@@ -69,6 +73,7 @@ function createProduct() {
   fetch("https://ecommerce-final-eomp.herokuapp.com/product/", {
     method: "POST",
     body: JSON.stringify({
+      user_id: user.user_id,
       image,
       name,
       description,
@@ -110,23 +115,8 @@ function previewFile() {
 }
 document.querySelector("#image").addEventListener("change", previewFile);
 
-// Code input for products page
-// JSON.parse(localStorage.getItem("user"))
-// `<button onclick="addToCart(${id})"></button>`
-// `<a href="login.html">Login</a>`
-
-// function addToCart(product_id) {
-//   fetch("https://ecommerce-final-eomp.herokuapp.com/product/")
-//     .then((res) => res.json())
-//     .then((res) => {
-//       console.log(res.data[0].product_id);
-//       // let item = products.filter((product) => product.product_id == productID);
-//       // console.log(item);
-//     });
-// }
-
+// CART
 var cart = [];
-
 if (window.localStorage["cart"]) {
   cart = JSON.parse(window.localStorage["cart"]);
 }
