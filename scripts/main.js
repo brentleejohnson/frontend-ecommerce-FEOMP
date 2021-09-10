@@ -6,11 +6,14 @@ function logout() {
 
 // SHOWS USER INFORMATION
 const user = JSON.parse(localStorage.getItem("user"));
-if (user != null) {
+if (user == null) {
+  document.querySelector(
+    "#greeting"
+  ).innerHTML = `You are not signed in, please do~`;
+} else
   document.querySelector(
     "#greeting"
   ).innerHTML = `Hello there ${user.full_name}`;
-}
 
 // FETCHES ALL THE PRODUCTS
 const products = JSON.parse(localStorage.getItem("products"));
