@@ -136,8 +136,61 @@ body {
   text-align: center;
 }
 
+#greeting {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
 #products {
   margin-bottom: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 50px;
+}
+
+.product-card {
+  width: 300px;
+  /* height: 300px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+}
+
+/* .card-image {
+  width: 250px;
+  height: 250px;
+} */
+
+.product-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.card-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-title {
+  color: #212529;
+}
+
+.product-description {
+  width: 100%;
+  font-weight: lighter;
+}
+
+.product-price {
+  font-weight: bolder;
 }
 
 #create-product-modal {
@@ -180,7 +233,7 @@ body {
 
 #contact.blur {
   backdrop-filter: blur(7px);
-  /* mask: inherit; */
+  -webkit-backdrop-filter: blur(7px);
 }
 
 .contact-form {
@@ -191,16 +244,11 @@ body {
   width: 40%;
   height: 80%;
   background: rgba(0, 0, 0, 0.8);
-  /* filter: blur(3px); */
   border-radius: 3px;
   box-shadow: 0 0 3px black;
   transition: 0.2s ease-in;
   font-size: larger;
 }
-
-/* .contact-form:hover {
-  filter: blur(0);
-} */
 
 .contact-form input {
   width: 40%;

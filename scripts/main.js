@@ -37,11 +37,15 @@ function showProducts(products) {
   products.forEach((product) => {
     container.innerHTML += `
         <div class="product-card">
+          <div class="card-image">
             <img class="product-image" src="${product.image}" alt="" />
+          </div>
+          <div class="card-description">
             <h3 class="product-title">${product.name}</h3>
             <p class="product-description">${product.description}</p>
             <p class="product-price">R${product.price}</p>
             <button class="addToCart">Add to the cart</button>
+          </div>
         </div>
         `;
     document.querySelectorAll(".addToCart").forEach((btn) => {
