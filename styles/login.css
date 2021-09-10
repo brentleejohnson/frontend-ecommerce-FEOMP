@@ -84,3 +84,20 @@ body {
 .login-form a:visited {
   color: rgba(255, 255, 255, 0.7);
 }
+
+/* KEYFRAMES */
+@media screen and (max-width: 600px) {
+  .background {
+    width: 70%;
+    height: 70%;
+    min-width: 0;
+    min-height: 0;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .background {
+    width: 250px;
+    height: 420px;
+  }
+}
