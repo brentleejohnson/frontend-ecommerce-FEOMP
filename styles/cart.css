@@ -55,4 +55,59 @@ body {
   height: 100%;
   background-attachment: fixed;
   background-size: cover;
+  margin-bottom: 10%;
+}
+
+#greeting {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 50px;
+}
+
+.item {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+}
+
+.cart-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.cart-name {
+  color: #212529;
+}
+
+.cart-price {
+  font-weight: bolder;
+}
+
+.cart-button {
+  width: 70%;
+  color: black;
+  background: transparent;
+  border: 1px solid black;
+  font-size: larger;
+  margin-top: 5%;
+  transition: 0.2s ease-in;
+}
+
+.cart-button:hover {
+  color: white;
+  background: black;
 }
