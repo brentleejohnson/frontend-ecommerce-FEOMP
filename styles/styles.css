@@ -178,6 +178,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 
 .product-title {
@@ -191,6 +192,21 @@ body {
 
 .product-price {
   font-weight: bolder;
+}
+
+.addToCart {
+  width: 70%;
+  color: black;
+  background: transparent;
+  border: 1px solid black;
+  font-size: larger;
+  margin-top: 5%;
+  transition: 0.2s ease-in;
+}
+
+.addToCart:hover {
+  color: white;
+  background: black;
 }
 
 #create-product-modal {
