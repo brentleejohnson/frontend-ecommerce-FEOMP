@@ -288,6 +288,7 @@ body {
   background: black;
   border: 1px solid white;
   transition: 0.3s ease-in;
+  font-size: 15px;
 }
 
 #contact-button:hover {
