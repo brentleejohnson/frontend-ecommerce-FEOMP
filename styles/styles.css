@@ -19,6 +19,7 @@ body {
   align-items: center;
   padding: 1%;
   position: fixed;
+  z-index: 2;
   color: white;
   text-shadow: 1px 0 black, -1px 0 black, 0 1px black, 0 -1px black;
 }
